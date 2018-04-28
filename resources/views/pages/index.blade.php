@@ -35,7 +35,7 @@
                                             <div class="col-md-7" style="font-size: 17px">
                                                 <strong>{{$book->rating}}</strong><span class="glyphicon glyphicon-star"  style="color:salmon"></span>&nbsp&nbsp
                                                 <button class="btn btn-sm btn-link" style="background-color :coral"> 
-                                                    <a href="#" style="color:black"><strong>VIEW</strong></a>
+                                                    <a href="/iandwe/public/books/{{$book->book_id}}" style="color:black"><strong>VIEW</strong></a>
                                                 </button>
                                             </div>
                                         </div>

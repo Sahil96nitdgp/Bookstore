@@ -49,6 +49,8 @@ class BooksController extends Controller
     public function show($id)
     {
         //
+        $book = Book::find($id);
+        return view('pages.book_description')->with('book', $book);
     }
 
     /**

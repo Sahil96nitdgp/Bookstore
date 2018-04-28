@@ -37,7 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
-                        <li><a href="/iandwe/public/">Home</a></li>
+                        <li><a href="/iandwe/public/">Start Shopping</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
