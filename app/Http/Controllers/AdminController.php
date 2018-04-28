@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Book;
 class AdminController extends Controller
 {
     /**
@@ -25,7 +25,7 @@ class AdminController extends Controller
     public function create()
     {
         //
-        echo "in create";
+        return view('admin.create');
     }
 
     /**
@@ -36,7 +36,25 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'author' => 'required',
+            'price' => 'required',
+            'rating' => 'required',
+            'genre' => 'required',
+            'description' => 'required'
+        ]);
+
+        $book = new Book;
+        $book->title = $request->input('title');
+        $book->author = $request->input('author');
+        $book->description = $request->input('description');
+        $book->price = $request->input('price');
+        $book->rating = $request->input('rating');
+        $book->genre = $request->input('genre');
+        $book->save();
+
+        return redirect('/books')->with('success', 'New Book Added!!');
     }
 
     /**
