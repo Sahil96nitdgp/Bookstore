@@ -6,15 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-		<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 
 	</head>
 
 
-	<body>
-        <nav class="navbar navbar-inverse navbar-static-top">
+	<body style="color:black; background-image: url('../resources/assets/images/background.jpg'); background-size :cover">
+        <nav class="navbar navbar-inverse navbar-static-top" >
             <div class="container">
                 <div class="navbar-header">
 
@@ -27,15 +28,15 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">{{config('app.name', 'IandWE') }}</a>
+                    <a class="navbar-brand" href="{{ url('/') }}" style="color :beige"><strong>{{config('app.name', 'IandWE') }}</strong></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
-                        <li><a href="/iandwe/public/about"> About Us</a></li>
-                        <li><a href="/iandwe/public/books"> Books</a></li>
+                        <li><a href="/iandwe/public/about" style="color :beige"> About Us</a></li>
+                        <li><a href="/iandwe/public/books" style="color :beige"> Books</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -52,11 +53,11 @@
                         </form>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}" style="color :beige">Login</a></li>
+                            <li><a href="{{ route('register') }}" style="color :beige">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color :beige">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -64,7 +65,7 @@
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                                                        document.getElementById('logout-form').submit();" style="color :beige">
                                             Logout
                                         </a>
 
