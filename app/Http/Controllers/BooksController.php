@@ -50,7 +50,7 @@ class BooksController extends Controller
     {
         //
         $book = Book::find($id);
-        return view('pages.book_description')->with('book', $book);
+        return view('pages.book')->with('book', $book);
     }
 
     /**

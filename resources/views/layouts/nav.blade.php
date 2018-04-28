@@ -14,7 +14,7 @@
 	</head>
 
 
-	<body style="color:black; background-image: url('../resources/assets/images/background.jpg'); background-size :cover">
+	<body style="color:black; background-image: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/light-yellow-background-hd-3.jpg'); background-size :cover">
         <nav class="navbar navbar-inverse navbar-static-top" >
             <div class="container">
                 <div class="navbar-header">
