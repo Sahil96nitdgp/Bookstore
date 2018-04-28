@@ -34,8 +34,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
-                        <li><a href="/iandwe/public"> Home</a></li>
                         <li><a href="/iandwe/public/about"> About Us</a></li>
+                        <li><a href="/iandwe/public/books"> Books</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
