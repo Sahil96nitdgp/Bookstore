@@ -4,7 +4,7 @@
     <div class="container">
     <h1>ADD BOOKS</h1>
     <div class="col-md-6 col-xs-offset-2">
-        {!! Form::open(['action' => 'AdminController@store', 'method' => 'POST' ]) !!}
+        {!! Form::open(['action' => 'AdminController@store', 'method' => 'POST', 'enctype' => 'multipart/data' ]) !!}
 
             <div class="form-group">
                 {{Form::label('title', 'Title: ')}}
@@ -34,6 +34,10 @@
             <div class="form-group">
                 {{Form::label('description', 'Book Description: ')}}
                 {{Form::textarea('description', '', ['class' => 'form-control', 'placeholder' => 'Description'])}}
+            </div>
+            <div class="form-group">
+                <b>Add a Cover Image for the Book : </b>
+                {{Form::file('cover_image')}}
             </div>
             <center>{{Form::submit('ADD BOOK', ['class' => 'btn btn-lg btn-primary'])}}</center><br>
         {!! Form::close() !!}

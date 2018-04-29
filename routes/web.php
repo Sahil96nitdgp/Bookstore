@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'BookList@index');
+Route::get('/', 'BooksController@index');
 
 Route::get('/about', function () {
     return view('pages.about');
