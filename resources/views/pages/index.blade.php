@@ -2,10 +2,12 @@
 @extends('layouts.nav')
 
 @section('content')
+
     <div class="container">
         
         <div class="row">
-
+            @include('layouts.messages')
+    
             <div class="col-md-2">
                 <h1>Books</h1>
                 Filters to be added

@@ -2,6 +2,7 @@
 @extends('layouts.nav')
 
 @section('content')
+    @include('layouts.messages')
     
     <div class="container">
         <div class="row">
@@ -23,7 +24,14 @@
                 </h3>
                 <h2><strong>Description</strong></h2>
                 <p>{{$book->description}}</p>
+                <hr>
+                <a href="/iandwe/public/admin/{{$book->book_id}}/edit" class="btn btn-primary btn-lg">Edit</a><br/>
+                <br>
+                {!! Form::model($book, array('route' => array('admin.destroy', $book->book_id), 'method' => 'DELETE')) !!}
+                    {{Form::submit('Delete', ['class' => 'btn btn-lg btn-danger'] )}}
+                {!! Form::close() !!}
 
+                <br>
                 
 
             </div>

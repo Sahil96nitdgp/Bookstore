@@ -76,7 +76,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::find($id);
+        return view('admin.edit')->with('book', $book);
     }
 
     /**
@@ -88,7 +89,25 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'author' => 'required',
+            'price' => 'required',
+            'rating' => 'required',
+            'genre' => 'required',
+            'description' => 'required'
+        ]);
+
+        $book = Book::find($id);
+        $book->title = $request->input('title');
+        $book->author = $request->input('author');
+        $book->description = $request->input('description');
+        $book->price = $request->input('price');
+        $book->rating = $request->input('rating');
+        $book->genre = $request->input('genre');
+        $book->save();
+
+        return redirect('/books')->with('success', 'Book Updated!!');
     }
 
     /**
@@ -99,6 +118,9 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::find($id);
+        $book->delete();
+
+        return redirect('/books')->with('success', 'Book Removed!!');        
     }
 }
