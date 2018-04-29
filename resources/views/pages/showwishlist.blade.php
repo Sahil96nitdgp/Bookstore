@@ -13,7 +13,8 @@
                                 <img src="../storage/cover_images/{{$result->cover_image}}"  alt="" width="186px" height="250" class="img-rounded">
                         </div>
                         <div class="col-md-7">
-                            <h2>{{$result->title}}<br><small> - {{$result->author}}</small></h2>
+                            <h2><h2><a href="/iandwe/public/books/{{$result->book_id}}">{{$result->title}}</a>
+                                <br><small> - {{$result->author}}</small></h2>
                             
                             <p>{{$result->description}}</p>
                         </div>

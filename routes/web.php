@@ -27,7 +27,13 @@ Route::get('/home/cart/{book_id}', 'HomeController@addToCart');
 Route::get('/home/cart', 'HomeController@showCart');
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+
 Route::resource('books', 'BooksController');
+
+
+
 
 Route::get('/admin/login', 'AdminController@login');
 Route::get('/admin/dashboard', 'AdminController@dashboard');

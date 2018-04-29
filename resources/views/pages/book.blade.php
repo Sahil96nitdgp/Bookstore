@@ -23,6 +23,17 @@
                             <strong style="font-size :30px"><i class="fa">&#xf156;</i> {{$book->price}}</strong>
                         </h3>
                     </div>
+
+                    <div class="col-md-6">
+                            @if(session('session_admin_login')!= null)
+                            <a href="/iandwe/public/admin/{{$book->book_id}}/edit" class="btn btn-primary btn-lg pull-right">Edit Book</a>
+                            {!! Form::model($book, array('route' => array('admin.destroy', $book->book_id), 'method' => 'DELETE')) !!}
+                                {{Form::submit('Delete', ['class' => 'btn btn-lg btn-danger '] )}}
+                            {!! Form::close() !!}
+        
+                            <br>
+                        @endif
+                    </div>
                 </div>
 
                 
@@ -30,15 +41,7 @@
                 <p>{{$book->description}}</p>
                 <hr>
 
-                @if(session('session_admin_login')!= null)
-                    <a href="/iandwe/public/admin/{{$book->book_id}}/edit" class="btn btn-primary btn-lg">Edit</a><br/>
-                    <br>
-                    {!! Form::model($book, array('route' => array('admin.destroy', $book->book_id), 'method' => 'DELETE')) !!}
-                        {{Form::submit('Delete', ['class' => 'btn btn-lg btn-danger'] )}}
-                    {!! Form::close() !!}
-
-                    <br>
-                @endif
+                
                 
 
             </div>
