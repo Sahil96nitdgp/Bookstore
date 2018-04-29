@@ -19,6 +19,8 @@ Route::get('/about', function () {
 
 Auth::routes();
 
+Route::get('/home/wishlist/{book_id}', 'HomeController@addToWishlist');
+Route::get('/home/wishlist', 'HomeController@showWishlist');
 Route::get('/home/cart/{book_id}', 'HomeController@addToCart');
 Route::get('/home/cart', 'HomeController@showCart');
 Route::get('/home', 'HomeController@index')->name('home');

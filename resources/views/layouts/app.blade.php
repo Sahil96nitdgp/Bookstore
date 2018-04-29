@@ -53,6 +53,8 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/iandwe/public/home/cart">My Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                                    <li><a href="/iandwe/public/home/wishlist" style="color :beige">My Wishlist <span class="glyphicon glyphicon-heart"></span></a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

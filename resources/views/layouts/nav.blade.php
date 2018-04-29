@@ -51,6 +51,9 @@
                                 </div>
                             </div>
                         </form>
+
+                        <li><a href="/iandwe/public/home/wishlist" style="color :beige">My Wishlist <span class="glyphicon glyphicon-heart"></span></a></li>
+                        <li><a href="/iandwe/public/home/cart" style="color :beige">My Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}" style="color :beige">Login</a></li>
