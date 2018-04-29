@@ -25,6 +25,7 @@ Route::resource('books', 'BooksController');
 
 Route::get('/admin/login', 'AdminController@login');
 Route::get('/admin/dashboard', 'AdminController@dashboard');
+Route::get('/admin/logout', 'AdminController@logout');
 Route::resource('admin', 'AdminController');
 
 

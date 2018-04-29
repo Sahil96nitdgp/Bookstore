@@ -34,20 +34,27 @@ class AdminController extends Controller
 
         if($admin_results->count()==1)
         {
+            $request->session()->put('session_admin_login', 'Logged in');
             return redirect('admin/dashboard')->with('success', 'Login Successful');
         }
         else{
             return redirect('admin')->with('error', 'Invalid Credentials');
         }
-
-        
-        
     }
 
     public function dashboard()
     {
         //
         return view('admin.dashboard');
+    }
+
+    public function logout(Request $request)
+    {
+        //
+        $books = Book::all();
+        $value = $request->session()->pull('session_admin_login', 'default');
+        //return $value;
+        return redirect('/')->with('books', $books);
     }
 
     /**

@@ -33,7 +33,7 @@
                                     
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-5" style="font-size:20px"><strong  ><i class="fa">&#xf156;</i> {{$book->price}}</strong> </h4></div>
+                                    <div class="col-md-5" style="font-size:16px"><strong  ><i class="fa">&#xf156;</i> {{$book->price}}</strong> </h4></div>
                                     <div class="col-md-7" style="font-size: 17px">
                                         <strong>{{$book->rating}}</strong><span class="glyphicon glyphicon-star"  style="color:salmon"></span>&nbsp&nbsp
                                         <button class="btn btn-sm btn-link" style="background-color :coral"> 
