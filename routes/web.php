@@ -22,4 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('books', 'BooksController');
+
+Route::get('/admin/login', 'AdminController@login');
+Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::resource('admin', 'AdminController');
+
+

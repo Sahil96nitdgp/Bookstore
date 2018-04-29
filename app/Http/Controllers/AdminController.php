@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Book;
+use App\Admin;
 class AdminController extends Controller
 {
     /**
@@ -14,7 +17,37 @@ class AdminController extends Controller
     public function index()
     {
         //
-        echo "In  admin";
+        return view('admin.admin_login');
+    }
+
+    public function login(Request $request)
+    {
+        //
+        $admin = new Admin;
+        $email = $request->input('email');
+        $password = $request->input('password');
+        
+        $admin_results = DB::table('admin')->where([
+            ['email', '=', $email],
+            ['password', '=', $password],
+        ])->get();
+
+        if($admin_results->count()==1)
+        {
+            return redirect('admin/dashboard')->with('success', 'Login Successful');
+        }
+        else{
+            return redirect('admin')->with('error', 'Invalid Credentials');
+        }
+
+        
+        
+    }
+
+    public function dashboard()
+    {
+        //
+        return view('admin.dashboard');
     }
 
     /**
