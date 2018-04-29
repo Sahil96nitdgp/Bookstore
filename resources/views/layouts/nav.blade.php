@@ -43,7 +43,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <form class="navbar-form navbar-left" action="/action_page.php">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="search">
+                                <input type="text" class="form-control" placeholder="Search yet to be added" name="search">
                                 <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <i class="glyphicon glyphicon-search"></i>

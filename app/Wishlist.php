@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
     //
-    protected $table = 'cart';
-    public $primaryKey = 'cart_id';
+    protected $table = 'wishlist';
+    public $primaryKey = 'wishlist_id';
     //public $timestamps = true;
 }

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
 use App\Cart;
+use App\Wishlist;
 
 
 class HomeController extends Controller
@@ -86,5 +87,19 @@ class HomeController extends Controller
         WHERE cart.id = 1*/
 
         return view('pages.showwishlist')->with('results', $results);
+    }
+
+    public function removeCart($book_id)
+    {
+        DB::table('cart')->where('book_id', '=', $book_id)->delete();
+
+        return redirect('/books')->with('success', 'Book Removed from Cart!!');        
+    }
+
+    public function removeWishlist($book_id)
+    {
+        DB::table('wishlist')->where('book_id', '=', $book_id)->delete();
+
+        return redirect('/books')->with('success', 'Book Removed from Wishlist!!');        
     }
 }
