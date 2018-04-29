@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Cart;
+
 
 class HomeController extends Controller
 {
@@ -28,15 +29,18 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function cart($book_id)
+    public function addToCart($book_id)
     {
         $user_id = auth()->user()->id;
-        //
-        $cart = new Cart;
-        $cart->id = $user_id;
-        $cart->book_id = $book_id;
-        $cart->save();
-        echo $book_id." in cart with user ".$user_id." Added to cart";
         
+        DB::insert('insert into cart (id, book_id) values (?, ?)', [$user_id, $book_id]);
+        
+        return redirect('/books')->with('success', 'Item Added To The Cart');
+        
+    }
+
+    public function showCart()
+    {
+        echo "Diplay all Cart items";
     }
 }

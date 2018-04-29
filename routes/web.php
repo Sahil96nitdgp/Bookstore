@@ -19,7 +19,8 @@ Route::get('/about', function () {
 
 Auth::routes();
 
-Route::get('/home/cart/{book_id}', 'HomeController@cart');
+Route::get('/home/cart/{book_id}', 'HomeController@addToCart');
+Route::get('/home/cart', 'HomeController@showCart');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('books', 'BooksController');
