@@ -19,7 +19,7 @@
                     @foreach($books as $book)
                         <div class="col-md-3">
                             <div class="well well-sm" style="background-color :azure">
-                                <img src="../storage/app/public/cover_images/{{$book->cover_image}}"  alt="" width="186px" height="250">
+                                <img src="../storage/app/public/cover_images/{{$book->cover_image}}"  alt="" width="186px" height="250" class="img-rounded">
                                 
                                 <div class="row" style="color :black">
                                     <div class="col-md-12"><strong>{{$book->title}}</strong></div>

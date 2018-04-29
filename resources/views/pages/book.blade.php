@@ -8,8 +8,8 @@
         <div class="row">
             <div class="col-md-4">
                 <img src="../storage/cover_images/{{$book->cover_image}}" alt="No img" width="100%" height="450px" class="img-responsive img-rounded"><br>
-                <button class="btn btn-lg" style="width:1.75in; background-color :orange"><i class="fa fa-shopping-bag"></i> Buy Now</button>
-                <button class="btn btn-lg" style="width:1.75in; background-color :goldenrod"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button>
+                <button class="btn btn-lg" style="width:1.75in; background-color :orange"><a href="#"><i class="fa fa-shopping-bag"></i> Add to Wishlist</a></button>
+            <button class="btn btn-lg" style="width:1.75in; background-color :goldenrod"><a href="/iandwe/public/home/cart/{{$book->book_id}}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a></button>
 
             </div>
 
