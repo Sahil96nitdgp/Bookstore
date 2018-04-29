@@ -82,8 +82,25 @@ class AdminController extends Controller
             'price' => 'required',
             'rating' => 'required',
             'genre' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
+
+        //file upload handling
+
+        if($request->hasFile('cover_image')){
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        }
+        else{
+            $fileNameToStore = 'noimage.jpg';
+        }
 
         $book = new Book;
         $book->title = $request->input('title');
@@ -92,6 +109,7 @@ class AdminController extends Controller
         $book->price = $request->input('price');
         $book->rating = $request->input('rating');
         $book->genre = $request->input('genre');
+        $book->cover_image = $fileNameToStore;
         $book->save();
 
         return redirect('/books')->with('success', 'New Book Added!!');

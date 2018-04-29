@@ -19,17 +19,17 @@
                     @foreach($books as $book)
                         <div class="col-md-3">
                             <div class="well well-sm" style="background-color :azure">
-                                <img src="../resources/assets/images/hp.jpg" alt="" width="186px" height="240">
+                                <img src="../storage/app/public/cover_images/{{$book->cover_image}}"  alt="" width="186px" height="250">
                                 
                                 <div class="row" style="color :black">
                                     <div class="col-md-12"><strong>{{$book->title}}</strong></div>
                                     
                                 </div>
                                 <div class="row" style="color :black">
-                                    <div class="col-md-8">
+                                    <div class="col-md-7">
                                             <small>-{{$book->author}}</small>
                                     </div>
-                                    <div class="col-md-4"><p>{{$book->genre}}</p></div>
+                                    <div class="col-md-5"><p>{{$book->genre}}</p></div>
                                     
                                 </div>
                                 <div class="row">

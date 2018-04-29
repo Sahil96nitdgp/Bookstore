@@ -4,7 +4,7 @@
     <div class="container">
     <h1>ADD BOOKS</h1>
     <div class="col-md-6 col-xs-offset-2">
-        {!! Form::open(['action' => 'AdminController@store', 'method' => 'POST', 'enctype' => 'multipart/data' ]) !!}
+        {!! Form::open(['action' => 'AdminController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data' ]) !!}
 
             <div class="form-group">
                 {{Form::label('title', 'Title: ')}}
