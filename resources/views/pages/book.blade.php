@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="col-md-6">
-                            @if(session('session_admin_login')!= null)
+                        @if(session('session_admin_login')!= null)
                             <a href="/iandwe/public/admin/{{$book->book_id}}/edit" class="btn btn-primary btn-lg pull-right">Edit Book</a>
                             {!! Form::model($book, array('route' => array('admin.destroy', $book->book_id), 'method' => 'DELETE')) !!}
                                 {{Form::submit('Delete', ['class' => 'btn btn-lg btn-danger '] )}}

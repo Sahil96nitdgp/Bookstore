@@ -35,51 +35,62 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+                        @if(session('session_admin_login')!= null)
+                            <li><a href="/iandwe/public/admin/dashboard"> Dashboard </a></li>
+                        @endif
                         <li><a href="/iandwe/public/about" style="color :beige"> About Us</a></li>
                         <li><a href="/iandwe/public/books" style="color :beige"> Books</a></li>
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <form class="navbar-form navbar-left" action="/action_page.php">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search yet to be added" name="search">
-                                <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
+                    @if(session('session_admin_login')== null)
+                        <!-- Right Side Of Navbar -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <form class="navbar-form navbar-left" action="/action_page.php">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search yet to be added" name="search">
+                                    <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
 
-                        <li><a href="/iandwe/public/home/wishlist" style="color :beige">My Wishlist <span class="glyphicon glyphicon-heart"></span></a></li>
-                        <li><a href="/iandwe/public/home/cart" style="color :beige">My Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}" style="color :beige">Login</a></li>
-                            <li><a href="{{ route('register') }}" style="color :beige">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color :beige">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                            <li><a href="/iandwe/public/home/wishlist" style="color :beige">My Wishlist <span class="glyphicon glyphicon-heart"></span></a></li>
+                            <li><a href="/iandwe/public/home/cart" style="color :beige">My Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                            <!-- Authentication Links -->
+                            @if (Auth::guest())
+                                <li><a href="{{ route('login') }}" style="color :beige">Login</a></li>
+                                <li><a href="{{ route('register') }}" style="color :beige">Register</a></li>
+                            @else
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color :beige">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();" style="color :black">
-                                            Logout
-                                        </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();" style="color :black">
+                                                Logout
+                                            </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endif
+                        </ul>
+
+                    @else
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/iandwe/public/admin/logout">Logout</a></li>
+                        </ul>
+                    
+                    @endif
                 </div>
             </div>
         </nav>

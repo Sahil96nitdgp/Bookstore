@@ -36,10 +36,10 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
 
+                        <li><a href="/iandwe/public/admin/dashboard"> Dashboard </a></li>
                         <li><a href="/iandwe/public/books"> View Books </a></li>
                         <li><a href="/iandwe/public/admin/create"> Add Book </a></li>
-                        
-                        
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
