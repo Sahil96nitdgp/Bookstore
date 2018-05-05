@@ -9,14 +9,17 @@
             @include('layouts.messages')
     
             <div class="col-md-2">
-                <h1>Books</h1>
-                <ul>
-                    <li><a href="/iandwe/public/books/newToOld">Newest First</a></li>
-                    <li><a href="/iandwe/public/books/oldToNew">Oldest First</a></li>
-                    <li><a href="/iandwe/public/books/priceLowToHigh">Price Low to High</a></li>
-                    <li><a href="/iandwe/public/books/priceHighToLow">Price High to Low</a></li>
-                    <li><a href="/iandwe/public/books/mostRated">Most Rated</a></li>
-                </ul>
+                <h2><b>Order By</b></h2>
+                <strong>
+                    <ul style="font-size: 20px">
+                        <li><a href="/iandwe/public/books/newToOld" style="color:black">Newest First</a></li>
+                        <li><a href="/iandwe/public/books/oldToNew" style="color:black">Oldest First</a></li>
+                        <li><a href="/iandwe/public/books/priceLowToHigh" style="color:black">Price Low to High</a></li>
+                        <li><a href="/iandwe/public/books/priceHighToLow" style="color:black">Price High to Low</a></li>
+                        <li><a href="/iandwe/public/books/mostRated" style="color:black">Most Rated</a></li>
+                        <li><a href="/iandwe/public/books" style="color:black">None</a></li>
+                    </ul>
+                </strong>
             </div>
 
             <div class="col-md-10">
