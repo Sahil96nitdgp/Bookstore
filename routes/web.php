@@ -29,7 +29,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-
+Route::get('/books/newToOld', 'BooksController@newToOld');
+Route::get('/books/oldToNew', 'BooksController@oldToNew');
+Route::get('/books/priceLowToHigh', 'BooksController@priceLowToHigh');
+Route::get('/books/priceHighToLow', 'BooksController@priceHighToLow');
+Route::get('/books/mostRated', 'BooksController@mostRated');
 Route::resource('books', 'BooksController');
 
 

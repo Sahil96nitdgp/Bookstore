@@ -19,6 +19,46 @@ class BooksController extends Controller
         return view('pages.index')->with('books', $books);
     }
 
+    public function newToOld()
+    {
+        //
+        $books = Book::orderBy('created_at', 'desc')->get();
+        return view('pages.filterBooks')->with('books', $books);
+        
+    }
+
+    public function oldToNew()
+    {
+        //
+        $books = Book::orderBy('created_at', 'asc')->get();
+        return view('pages.filterBooks')->with('books', $books);
+        
+    }
+
+    public function priceLowToHigh()
+    {
+        //
+        $books = Book::orderBy('price', 'asc')->get();
+        return view('pages.filterBooks')->with('books', $books);
+        
+    }
+
+    public function priceHighToLow()
+    {
+        //
+        $books = Book::orderBy('price', 'desc')->get();
+        return view('pages.filterBooks')->with('books', $books);
+        
+    }
+
+    public function mostRated()
+    {
+        //
+        $books = Book::orderBy('rating', 'desc')->get();
+        return view('pages.filterBooks')->with('books', $books);
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      *
