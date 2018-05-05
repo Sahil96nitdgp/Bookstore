@@ -22,7 +22,8 @@
                             <h3>Price : {{$result->price}}</h3>
                             <h3>Genre : {{$result->genre}}</h3>
 
-                            <button class="btn btn-danger btn-lg"><a href="/iandwe/public/home/removewishlist/{{$result->book_id}}" style="color :cornsilk">Remove From Wishlist</a></button>
+                            <button class="btn btn-danger btn-lg"><a href="/iandwe/public/home/removewishlist/{{$result->book_id}}" style="color :cornsilk">Remove From Wishlist</a></button><br><br>
+                            <button class="btn btn-lg" style="width:2.30in; background-color :goldenrod"><a href="/iandwe/public/home/cart/{{$result->book_id}}" style="color :crimson"><span class="glyphicon glyphicon-shopping-cart"></span> <b>Add to Cart</b> </a></button><br>
                         </div>
                     </div>
                 </div>
